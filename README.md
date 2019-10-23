@@ -7,34 +7,45 @@ Optional use of physical units via Unitful.jl
 
 Inputs are either P&T, P&h or P&s.
 
-
-[![SteamTables](http://pkg.julialang.org/badges/SteamTables_0.6.svg)](http://pkg.julialang.org/?pkg=SteamTables)
-
-Linux and macOS: [![Build Status](https://travis-ci.org/braamvandyk/SteamTables.jl.svg?branch=master)](https://travis-ci.org/braamvandyk/SteamTables.jl)
-
-Windows: [![Build Status](https://ci.appveyor.com/api/projects/status/github/braamvandyk/SteamTables.jl?branch=master&svg=true)](https://ci.appveyor.com/project/braamvandyk/SteamTables-jl/branch/master)
-
+[![Build Status](https://travis-ci.org/braamvandyk/SteamTables.jl.svg?branch=master)](https://travis-ci.org/braamvandyk/SteamTables.jl)
 [![Coverage Status](https://coveralls.io/repos/braamvandyk/SteamTables.jl/badge.svg?branch=master)](https://coveralls.io/r/braamvandyk/SteamTables.jl?branch=master)
 
 ## Exported functions
 
 ### Single input
 
-  Psat(T) and Tsat(P) returns the saturation linearindices
+Name         |Units  |Properties returned
+-------------|-------|-------------------
+Psat(T)      |MPa    |Saturation pressure
+Tsat(P)      |K      |Saturation temperature
+SatDensL(T)  |kg/m3  |Saturated liquid density
+SatDensV(T)  |kg/m3  |Saturated vapour density
+SatHL(T)     |J/kg   |Saturated liquid enthalpy
+SatHV(T)     |J/kg   |Saturated vapour enthalpy
+SatSL(T)     |J/kgK  |Saturated liquid entropy
+SatSV(T)     |J/kgK  |Saturated vapour entropy
+DeltaHvap    |J/kg   |Latent heat of vaporisation  
 
 ### Two inputs
 
 #### P and T
 
-  SpecificG, SpecificF, SpecificV, SpecificU, SpecificS, SpecificH, SpecificCP, SpecificCV, SpeedOfSound
+    SpecificG, SpecificF, SpecificV, SpecificU, SpecificS, SpecificH, SpecificCP, SpecificCV, SpeedOfSound
 
 #### P and h
 
-  SpecificG_Ph, SpecificF_Ph, SpecificV_Ph, SpecificU_Ph, SpecificS_Ph, SpecificH_Ph, SpecificCP_Ph, SpecificCV_Ph, SpeedOfSound_Ph
+    SpecificG_Ph, SpecificF_Ph, SpecificV_Ph, SpecificU_Ph, SpecificS_Ph, SpecificH_Ph, SpecificCP_Ph, SpecificCV_Ph, SpeedOfSound_Ph, Quality_Ph
 
 #### P and s
 
-  SpecificG_Ps, SpecificF_Ps, SpecificV_Ps, SpecificU_Ps, SpecificS_Ps, SpecificH_Ps, SpecificCP_Ps, SpecificCV_Ps, SpeedOfSound_Ps
+    SpecificG_Ps, SpecificF_Ps, SpecificV_Ps, SpecificU_Ps, SpecificS_Ps, SpecificH_Ps, SpecificCP_Ps, SpecificCV_Ps, SpeedOfSound_Ps, Quality_Ps
+
+#### T and h
+    Quality_Th
+
+#### T and s
+    Quality_Ts
+
 
 Name         |Units  |Properties returned
 -------------|-------|-------------------
@@ -47,6 +58,7 @@ SpecificH    |kJ/kg  |Specific enthalpy
 SpecificCp   |kJ/kgK |Specific isobaric heat capacity
 SpecificCv   |kJ/kgK |Specific isochoric heat capacity
 SpeedOfSound |m/s    |Sonic velocity
+Quality      |       |Vapour quality  
 
 Temperatures in K, Pressures in MPa
 
